@@ -1,8 +1,8 @@
 (() => {
   if (document.querySelector("[mcx-media]") === null) {
-    for (const $video of document.querySelectorAll("video")) {
-      if (!$video.paused && !$video.muted) {
-        $video.toggleAttribute("mcx-media", true);
+    for (const $media of document.querySelectorAll("audio, video")) {
+      if (!$media.paused && !$media.muted) {
+        $media.toggleAttribute("mcx-media", true);
         window.dispatchEvent(new Event("hook"));
         return;
       }
